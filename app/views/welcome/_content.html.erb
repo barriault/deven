@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-md-8">
+		<div class="page-header">
+			<h3>Welcome to <%= ENV["WEBSITE_NAME"] %> application.</h3>
+		</div>
+
+		<p class="text-danger">This computer system and data herein are available only for authorized purposes by authorized users. Use for any other purpose may result in administrative/disciplinary actions or criminal prosecution against the user. Usage may be subject to security testing and monitoring. Applicable privacy laws establish the expectations of privacy.</p>
+
+		<p>For security reasons, quit your web browser when you are finished accessing this application.</p>
+	</div>
+
+	<div class="col-md-4">
+		<div class="page-header">
+			<h3>For support contact:</h3>
+		</div>
+		<address>
+			<span class="glyphicon glyphicon-user"></span> <strong>Jeff Barriault</strong><br>
+			<span class="glyphicon glyphicon-envelope"></span> <%= mail_to "jeff@barriault.net", "jeff@barriault.net", subject: "HELP: Deven's DB" %>
+		</address>
+	</div>
+</div>

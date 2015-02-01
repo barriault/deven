@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'figaro'
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'

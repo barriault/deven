@@ -1,0 +1,14 @@
+<div class="page-header">
+  <h2>Sign Up</h2>
+</div>
+
+<%= bootstrap_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	<%= f.bs_email_field :email, placeholder: "Email", :autofocus => true %>
+	<%= f.bs_password_field :password, placeholder: "Password"  %>
+	<%= f.bs_password_field :password_confirmation, label: "Password Confirmation", placeholder: "Password Confirmation"  %>
+	<%= f.bs_submit "Sign Up" %>
+<% end %>
+
+<div class="col-sm-offset-2 col-sm-10">
+	<%= render "devise/shared/links" %>
+</div>

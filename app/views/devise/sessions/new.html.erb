@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h2>Sign In</h2>
+</div>
+
+<%= bootstrap_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<%= f.bs_email_field :email, placeholder: "Email", :autofocus => true %>
+	<%= f.bs_password_field :password, placeholder: "Password"  %>
+	<%= f.bs_submit "Sign In" %>
+<% end %>
+
+<div class="col-sm-offset-2 col-sm-10">
+	<%= render "devise/shared/links" %>
+</div>

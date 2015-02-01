@@ -1,0 +1,16 @@
+<div class="page-header">
+  <h2>Change Your Password</h2>
+</div>
+
+<%= bootstrap_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+	<%= devise_error_messages! %>
+	<%= f.hidden_field :reset_password_token %>
+	<%= f.bs_password_field :password, label: "New Password", placeholder: "New Password", :autofocus => true  %>
+	<%= f.bs_password_field :password_confirmation, label: "Confirm New Password", placeholder: "Confirm New Password"  %>
+	<%= f.bs_submit "Change My Password" %>
+<% end %>
+
+<div class="col-sm-offset-2 col-sm-10">
+	<%= render "devise/shared/links" %>
+</div>
+
