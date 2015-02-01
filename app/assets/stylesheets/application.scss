@@ -1,0 +1,62 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+$navbar-inverse-brand-color: #C4231B;
+$navbar-inverse-brand-hover-color: #C4231B;
+$grid-float-breakpoint: 1000px;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap/theme';
+
+body { padding-top: 70px; }
+
+.shrink {
+	width: 1%;
+}
+
+.nav.nav-tabs {
+	list-style: none outside none;
+	margin-bottom: 18px;
+	margin-left: 0;
+}
+
+.table td a.disabled span.glyphicon {
+	color: gray;
+}
+
+.table td a span.glyphicon {
+	color: #000000;
+}
+
+.sort-attribute {
+	width: 15%;
+	display: inline;
+	margin-right: 5px;
+}
+
+.search-attribute, .search-predicate {
+	width: 25%;
+	display: inline;
+}
+
+.search-value {
+	width: 30%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.trashed {
+  text-decoration: line-through;
+}
