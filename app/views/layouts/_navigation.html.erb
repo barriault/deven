@@ -9,11 +9,21 @@
 			<%= link_to ENV["WEBSITE_NAME"], root_path, class: "navbar-brand" %>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
+      <% if user_signed_in? -%>
       <ul class="nav navbar-nav">
         <li><%= link_to 'Menu1', '#' %></li>
         <li><%= link_to 'Menu2', '#' %></li>
         <li><%= link_to 'Menu3', '#' %></li>
       </ul>
+      <% end -%>
+			<ul class="nav navbar-nav navbar-right">
+				<% if user_signed_in? -%>
+				<p class="navbar-text hidden-sm hidden-xs hidden-md">Logged in as <%= "#{current_user.email}" %></p>
+				<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+				<% else -%>
+				<li><%= link_to "Login", new_user_session_path %></li>
+				<% end -%>
+			</ul>
     </div><!--/.nav-collapse -->
   </div>
 </nav>
