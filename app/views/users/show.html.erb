@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h2>User</h2>
+</div>
+
+<ul class="nav nav-tabs">
+  <li>
+    <%= link_to users_path do %>
+      <span class="glyphicon glyphicon-list"></span> List
+    <% end %>
+  </li>
+  
+  <li>
+    <%= link_to new_user_path do %>
+      <span class="glyphicon glyphicon-plus"></span> New
+    <% end %>
+  </li>
+  
+  <li class="active">
+    <%= link_to user_path(@user) do %>
+      <span class="glyphicon glyphicon-info-sign"></span> Details
+    <% end %>
+  </li>
+  
+  <li>
+    <%= link_to edit_user_path(@user) do %>
+      <span class="glyphicon glyphicon-pencil"></span> Edit
+    <% end %>
+  </li>
+</ul>
+
+<%= render 'details' %>

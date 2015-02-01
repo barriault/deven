@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'figaro'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'devise'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'
