@@ -1,5 +1,7 @@
 class Activity < ActiveRecord::Base
   
+  has_many :presentations
+  
   monetize :commercial_support_cents, allow_nil: true, numericality: { greater_than_or_equal_to: 0 }
   monetize :sponsorship_cents, allow_nil: true, numericality: { greater_than_or_equal_to: 0 }
   
