@@ -17,6 +17,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'email_validator'
 gem 'chronic'
+gem 'money-rails'
 
 group :development, :test do
   gem 'byebug'

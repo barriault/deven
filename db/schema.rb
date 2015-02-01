@@ -11,10 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201203942) do
+ActiveRecord::Schema.define(version: 20150201220032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "activity_type"
+    t.decimal  "contact_hours"
+    t.boolean  "co_provided"
+    t.boolean  "received_support"
+    t.integer  "commercial_support_cents"
+    t.string   "commercial_support_currency", default: "USD", null: false
+    t.integer  "sponsorship_cents"
+    t.string   "sponsorship_currency",        default: "USD", null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
 
   create_table "programs", force: :cascade do |t|
     t.string   "name"

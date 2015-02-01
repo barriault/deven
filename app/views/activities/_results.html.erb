@@ -2,7 +2,7 @@
   <table class="table table-condensed table-striped table-hover">
   	<thead>
   		<tr>
-  			<th>Name</th>
+  			<th>Title</th>
   			<th>Start Date</th>
   			<th>End Date</th>
       
@@ -13,24 +13,24 @@
   	</thead>
 
   	<tbody>
-  		<% @programs.each do |program| -%>
+  		<% @activities.each do |activity| -%>
     		<tr>
-    			<td><%= program.name %></td>
-    			<td><%= program.chronic_start_date %></td>
-    			<td><%= program.chronic_end_date %></td>
+    			<td><%= activity.title %></td>
+    			<td><%= activity.chronic_start_date %></td>
+    			<td><%= activity.chronic_end_date %></td>
           
           <td>
-            <%= link_to program_path(program) do %>
+            <%= link_to activity_path(activity) do %>
               <span class="glyphicon glyphicon-info-sign"></span>
             <% end %>
           </td>
           <td>
-            <%= link_to edit_program_path(program) do %>
+            <%= link_to edit_activity_path(activity) do %>
               <span class="glyphicon glyphicon-pencil"></span>
             <% end %>
           </td>
           <td>
-            <%= link_to(program, method: :delete, title: "Delete", data: { toggle: "tooltip", confirm: 'Are you sure?' }) do %>
+            <%= link_to(activity, method: :delete, title: "Delete", data: { toggle: "tooltip", confirm: 'Are you sure?' }) do %>
               <span class="glyphicon glyphicon-remove"></span>
             <% end %>
           </td>
@@ -40,4 +40,4 @@
   </table>
 </div>
 
-<%= paginate @programs %>
+<%= paginate @activities %>

@@ -1,6 +1,10 @@
-class Program < ActiveRecord::Base
+class Activity < ActiveRecord::Base
   
-  validates :name, presence: true
+  monetize :commercial_support_cents, allow_nil: true, numericality: { greater_than_or_equal_to: 0 }
+  monetize :sponsorship_cents, allow_nil: true, numericality: { greater_than_or_equal_to: 0 }
+  
+  validates :title, :start_date, :end_date, :activity_type, :contact_hours, presence: true
+  validates :contact_hours, numericality: { greater_than: 0 }
   validate  :validate_dates
   
   def chronic_start_date
@@ -22,6 +26,11 @@ class Program < ActiveRecord::Base
       @end_date_invalid = true if self.end_date.nil?
     end
   end
+  
+  ACTIVITY_TYPES = [
+    [ "PD", "PD" ], 
+    [ "LP", "LP" ]
+  ]
   
   private
   

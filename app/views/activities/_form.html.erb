@@ -1,0 +1,80 @@
+<%= form_for(@activity, html: { class: "edit_program form-horizontal", role: "form" }) do |f| %>
+
+  <!-- Errors -->
+  <%= bootstrap_errors f %>
+  
+  <%= content_tag(:div, class: "form-group #{has_error(f.object, :title)}") do %>
+    <%= f.label :title, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
+    </div>
+  <% end %>
+  
+  <%= content_tag(:div, class: "form-group #{has_error(f.object, :start_date)}") do %>
+    <%= f.label :start_date, class: "col-sm-2 control-label"%>
+    <div class="col-sm-10">
+      <div class="input-group date" data-behaviour="datepicker">
+        <%= f.text_field :chronic_start_date, class: "form-control" %>
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+  <% end %>
+  
+  <%= content_tag(:div, class: "form-group #{has_error(f.object, :end_date)}") do %>
+    <%= f.label :end_date, class: "col-sm-2 control-label"%>
+    <div class="col-sm-10">
+      <div class="input-group date" data-behaviour="datepicker">
+        <%= f.text_field :chronic_end_date, class: "form-control" %>
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+  <% end %>
+  
+  <%= content_tag(:div, class: "form-group #{has_error(f.object, :activity_type)}") do %>
+    <%= f.label :activity_type, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.select :activity_type, Activity::ACTIVITY_TYPES, { include_blank: false }, { class: "form-control" } %>
+    </div>
+  <% end %>
+  
+  <%= content_tag(:div, class: "form-group #{has_error(f.object, :contact_hours)}") do %>
+    <%= f.label :contact_hours, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :contact_hours, placeholder: "Contact Hours", class: "form-control" %>
+    </div>
+  <% end %>
+  
+  <%= content_tag(:div, class: "form-group") do %>
+    <%= content_tag(:div, class: "col-sm-offset-2 col-sm-10") do %>
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :received_support %> Received commercial support or sponsorship?
+        </label>
+      </div>
+    <% end %>
+  <% end %>
+  
+  <%= content_tag(:div, class: "form-group #{has_error(f.object, :commercial_support)}") do %>
+    <%= f.label :commercial_support, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :commercial_support, placeholder: "Ammount of Commercial Support Received", class: "form-control" %>
+    </div>
+  <% end %>
+  
+  <%= content_tag(:div, class: "form-group #{has_error(f.object, :sponsorship)}") do %>
+    <%= f.label :sponsorship, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :sponsorship, placeholder: "Amount of Sponsorship Received", class: "form-control" %>
+    </div>
+  <% end %>
+    
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

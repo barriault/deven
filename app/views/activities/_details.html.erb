@@ -1,0 +1,28 @@
+<dl class="dl-horizontal">
+  <dt>Title</dt>
+  <dd><%= @activity.title %></dd>
+  
+  <dt>Start Date</dt>
+  <dd><%= @activity.chronic_start_date %></dd>
+  
+  <dt>End Date</dt>
+  <dd><%= @activity.chronic_end_date %></dd>
+  
+  <dt>Activity Type</dt>
+  <dd><%= @activity.activity_type %></dd>
+  
+  <dt>Contact Hours</dt>
+  <dd><%= @activity.contact_hours %></dd>
+  
+  <dt>Co-provided?</dt>
+  <dd><%= @activity.co_provided? ? "Yes" : "No" %></dd>
+  
+  <dt>Received Support?</dt>
+  <dd><%= @activity.received_support? ? "Yes" : "No" %></dd>
+  
+  <dt>Commercial Support</dt>
+  <dd><%= humanized_money_with_symbol @activity.commercial_support %></dd>
+  
+  <dt>Sponsorship</dt>
+  <dd><%= humanized_money_with_symbol @activity.sponsorship %></dd>
+</dl>
