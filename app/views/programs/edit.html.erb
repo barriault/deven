@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h2>Edit Program</h2>
+</div>
+
+<ul class="nav nav-tabs">
+  <li>
+    <%= link_to programs_path do %>
+      <span class="glyphicon glyphicon-list"></span> List
+    <% end %>
+  </li>
+  
+  <li>
+    <%= link_to new_program_path do %>
+      <span class="glyphicon glyphicon-plus"></span> New
+    <% end %>
+  </li>
+  
+  <li>
+    <%= link_to program_path(@program) do %>
+      <span class="glyphicon glyphicon-info-sign"></span> Details
+    <% end %>
+  </li>
+  
+  <li class="active">
+    <%= link_to edit_program_path(@program) do %>
+      <span class="glyphicon glyphicon-pencil"></span> Edit
+    <% end %>
+  </li>
+</ul>
+
+<%= render 'form' %>
